@@ -1,0 +1,47 @@
+<app-empty  *ngIf="emptydb" ></app-empty>
+<main *ngIf="!emptydb" >
+  <div class="searchFormClass col-lg-4 my-2 search-bar">
+    <form #searchbeautifyer="ngForm"
+    (ngSubmit)="searchBeautifyerTerm(searchbeautifyer.value)"
+    class="d-inline">
+        <div class="form-group">
+            <input id="search" class="beauty-search" minlength="5" name="search" required ngModel #search="ngModel" placeholder="Search..."
+                type="text">
+            <button [disabled]="!searchbeautifyer.valid" class="btn btn-success mx-2" type="submit">Search</button>
+        </div>
+    </form>
+</div>
+
+<!--Trying a table -->
+<section class="beautifyers_table">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Quartier</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Responsable</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let el of filteredList">
+            <th scope="row"> {{el.beautif_id}} </th>
+            <td>{{el.bname}}</td>
+            <td>{{el.ville }}</td>
+            <td>{{el.quartier}}</td>
+            <td>{{el.phone }}</td>
+            <td>{{el.admin_name}} </td>
+            <td>
+                <a (click)="gotoUpdate(el.beautif_id || 1)" class="btn btn-success m-1" ><i class="icon bi-pen mx-1"></i>edit</a>
+                <a (click)="gotoView(el.beautif_id || 1)"  class="btn btn-secondary m-1" ><i class="icon bi-eye mx-1 "></i>view</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</section>
+
+
+</main>

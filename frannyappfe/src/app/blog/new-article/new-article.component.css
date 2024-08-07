@@ -1,0 +1,23 @@
+*{
+    font-family: 'FiraSansRegular';
+    font-size: 14px;
+}
+.container{
+    margin: 0 auto;
+}
+h1{
+    color: #F460FC;
+    font-weight: bold !important;
+    padding: 1%;
+    margin-top: 1%;
+    font-size: 30px !important;
+}
+h4{
+    font-size: 20px !important;
+    color: #5DBAE5;
+
+}
+h6{
+    color: #F460FC;
+    font-size: 13px !important;
+}

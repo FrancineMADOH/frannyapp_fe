@@ -1,0 +1,129 @@
+<form #addPrestationForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="title">Prestation title </label>
+        <input type="text"
+        required
+        maxlength="60"
+        class="form-control"
+        id="title"
+        name="title"
+        ngModel
+        #title="ngModel">
+    </div>
+    <small *ngIf="!title.valid && title.touched">Add a valid title for prestation</small>
+    <div class="form-group">
+        <label for="price">Prestation Price</label>
+        <input type="number" 
+        pattern="[0-9]*"
+        maxlength="5"
+        id="price"
+        required
+        ngModel
+        #price="ngModel"
+        name="price"
+        class="form-control">
+    </div>
+    <small *ngIf="!price.valid && price.touched">Add a valid price for this prestation</small>
+
+
+    <div class="form-group">
+        <label for="duration">Prestation duration</label>
+        <input type="text"
+        name="duration"
+        id="duration"
+        placeholder="eg: 45 mn"
+        required
+        maxlength="15"
+        ngModel
+        #duration="ngModel"
+        class="form-control">
+    </div>
+    <small *ngIf="!duration.valid && duration.touched">Add a valid duration for this prestation</small>
+
+    <div class="form-group">
+        <label for="category">Prestation category</label>
+        <select 
+        name="category"
+        id="category"
+        required
+        maxlength="15"
+        ngModel
+        #category="ngModel"
+        class="form-control">
+        <option value="0" selected>Select a category</option>
+        <option value="Coiffure">Coiffure</option>
+        <option value="Onglerie">Onglerie</option>
+        <option value="Make-Up">Make-Up</option>
+        <option value="Massage">Massage</option>
+    </select>
+    </div>
+    <small *ngIf="!category.valid && category.touched"></small>
+    <div class="form-group">
+        <label for="seance">Seance description</label>
+        <textarea type="text"
+        name="seance" 
+        id="seance"
+        maxlength="300"
+        required
+        ngModel
+        #seance="ngModel"
+        class="form-control"></textarea>
+    </div>
+    <small *ngIf="!seance.valid && seance.touched">Add a valid seance description</small>
+    <div class="form-group">
+        <label for="gold">Prestation gold description</label>
+        <textarea type="text" 
+        required
+        maxlength="300"
+        name="gold"
+        id="gold"
+        ngModel
+        #gold="ngModel"
+        class="form-control"></textarea>
+    </div>
+    <small *ngIf="!gold.valid && gold.touched">Add gold addition for this prestation</small>
+
+    <div class="form-group">
+        <label for="gold_price">Prestation Gold Price</label>
+        <input type="number" 
+        pattern="[0-9]*"
+        maxlength="5"
+        id="gold_price"
+        required
+        ngModel
+        #gold_price="ngModel"
+        name="gold_price"
+        class="form-control">
+    </div>
+    <small *ngIf="!gold_price.valid && gold_price.touched">Add gold addition for this prestation</small>
+
+    <div class="form-group">
+        <label for="premium">Prestation Premium</label>
+        <textarea type="text"
+        id="premium"
+        required
+        maxlength="300"
+        ngModel 
+        #premium="ngModel"
+        name="premium"
+        class="form-control"></textarea>
+    </div>
+    <small *ngIf="!premium.valid && premium.touched">Add a premium addition for this prestation</small>
+    <div class="form-group">
+        <label for="premium_price">Prestation Premium Price</label>
+        <input type="number" 
+        pattern="[0-9]*"
+        maxlength="5"
+        id="premium_price"
+        required
+        ngModel
+        #premium_price="ngModel"
+        name="premium_price"
+        class="form-control">
+    </div>
+    <small *ngIf="!premium_price.valid && premium_price.touched">Add a premium price for this prestation</small>
+
+    <button type="submit" class="btn btn-primary m-2" [disabled]="!addPrestationForm['valid']" >{{action }} </button>
+</form>
+<button (click)="backToPrestation()" class="btn btn-secondary">Cancel</button>
+

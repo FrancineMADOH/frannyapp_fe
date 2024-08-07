@@ -1,0 +1,123 @@
+<div class="main container">
+
+ 
+
+    <h1 class="text-center my-4">BLOG DASHBOARD</h1>
+    
+    <div class="spinner-border" role="status" *ngIf="!isLoading" >
+      <span class="sr-only">Loading...</span>
+    </div>
+  
+    <div class="dashboard" *ngIf="isLoading" >
+  
+    <div class="row my-3">
+      <div class="col-lg-3 my-3 ">
+        <div class="card">
+          <div class="text-center icon">
+            <i class="bi bi-pencil-square"></i>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{kpi.totalposts}}</h5>
+            <p class="card-text">Post(s)</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 my-3">
+        <div class="card">
+          <div class="text-center icon">
+            <i class="bi bi-pencil-square"></i>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{kpi.feminity}}</h5>
+            <p class="card-text">Feminity Posts(s)</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 my-3">
+        <div class="card">
+          <div class="text-center icon">
+            <i class="bi bi-pencil-square"></i>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{kpi.maternity}}</h5>
+            <p class="card-text">Maternity Post(s)</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 my-3">
+        <div class="card">
+          <div class="text-center icon">
+            <i class="bi bi-pencil-square"></i>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{kpi.family}}</h5>
+            <p class="card-text">Family post(s)</p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- second row -->
+    <div class="row dashboard-metrics">
+  
+      <div class="col-lg-3 my-3">
+        <div class="card" >
+          <div class="text-center icon">
+            <i class="bi bi-chat-heart-fill"></i>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{kpi.total_applause}}</h5>
+            <p class="card-text">Applause(s)</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 my-3">
+        <div class="card">
+          <div class="text-center icon">
+            <i class="bi bi-chat-dots"></i>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{kpi.total_comment}}</h5>
+            <p class="card-text">Comments(s)</p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  
+    
+  
+    <div class="row ranking_metrics">
+      <div class="col-lg-12 mx-2">
+        <h4 class="text-center">Top Blog Post</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Rank</th>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Total Comments</th>
+              <th scope="col">Total Applause</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let el of topfive; index as i">
+              <th scope="row">{{i+1}} </th>
+              <td>{{el.title }} </td>
+              <td>{{el.admin_name }} </td>
+              <td>{{el.total_comment}} </td>
+              <td>{{el.total_applause}} </td>
+            </tr>
+          </tbody>
+        </table>
+  
+      </div>
+    </div>
+  </div>
+  
+  </div>

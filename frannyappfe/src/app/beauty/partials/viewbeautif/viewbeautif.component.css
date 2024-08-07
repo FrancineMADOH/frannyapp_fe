@@ -1,0 +1,131 @@
+
+
+h5{
+  color: #17c0eb;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.attributes{
+  font-weight: bold;
+  font-size: 18px;
+  padding: 2px;
+}
+hr{
+  border: #000 solid 2px;
+  width: 100%;
+}
+
+.btn-secondary{
+  margin: 0 auto 0;
+  padding: 10px;
+  color: #fff;
+  border: none !important;
+  border-radius: 0px;
+  background:#53534F !important;
+
+}
+.btn-secondary:hover{
+  margin: 0 auto 0;
+  padding: 10px;
+  color: #fff;
+  border: none !important;
+  border-radius: 0px;
+  background:#17c0eb!important;
+
+}
+.card{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+
+::selection{
+  background: #F460FC;
+  color: #fff;
+}
+
+.container{
+  font-family: 'FiraSansRegular';
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 20px;
+}
+.container .box{
+  width: calc(60% - 10px);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+  border-radius: 5px;
+}
+
+.container .box .image{
+  margin: 10px 0;
+  height: 150px;
+  width: 150px;
+  background: #F460FC;
+  padding: 3px;
+  border-radius: 50%;
+}
+.box .image img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+.box p{
+  text-align: justify;
+  margin-top: 2px;
+}
+.empname{
+  color: #F460FC;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btns{
+  margin-top: 20px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.btns button{
+  border: none !important;
+
+  background: #F460FC;
+  width: 100%;
+  padding: 9px 0px;
+  outline: none;
+  border: 2px solid #F460FC;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  transition: all 0.3s linear;
+}
+
+.btns button:last-child{
+  color: #fff;
+  margin-left: 5px;
+}
+.btns button:first-child:hover{
+  background: #17c0eb;
+  color: #fff;
+}
+.btns button:hover{
+  color: #fff;
+}
+
+@media (max-width:768px){
+  .container .box{
+    width: 100%;
+  }
+}

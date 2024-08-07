@@ -1,0 +1,53 @@
+<div class="container col-lg-3 my-2">
+  <form #searchRendezVous="ngForm"  (ngSubmit)="searchByTerm(searchRendezVous.value)">
+    <div class="form-group">
+      <input class="form-control" id="search" minlength="5" name="search" required ngModel #search="ngModel"
+        placeholder="Search..." type="text">
+      <button [disabled]="!searchRendezVous.valid" class="btn btn-success m-2" type="submit">
+        Search<i class="bi bi-search mx-2"></i></button>
+        <button class="btn btn-secondary mx-2" disabled>Total Rendez-vous:  {{rdvList.length}} </button>
+    </div>
+  </form>
+</div>
+
+<section class="prestation_table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Client</th>
+        <th scope="col">Category</th>
+        <th scope="col">Date</th>
+        <th scope="col">Price</th>
+        <th scope="col">State</th>
+        <th scope="col">Assigned To</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let el of filteredrdvList" ngClass="{{ 0 + el.rdvstate}}">
+        <th scope="row"> {{el.rdv_id}} </th>
+        <td>{{el.client_name}}</td>
+        <td>{{el.category }}</td>
+        <td>{{el.rdvdate }}</td>
+        <td>{{el.rdv_price}}</td>
+        <td ngClass="{{el.rdvstate}} ">{{el.rdvstate }}</td>
+        <td>{{el.bname}} </td>
+        <td>
+          <button *ngIf="el.rdvstate === schedApt" (click)="gotoAssign(el.rdv_id || 1) "
+            class="card-link btn btn-secondary m-1">Assign</button>
+          <button *ngIf="!(el.rdvstate===complApt || el.rdvstate===CancelApt)" (click)="gotoCancel(el.rdv_id || 1) "
+            class="card-link btn btn-danger m-1"><i class="bi bi-x-circle m-1"></i>Cancel</button>
+          <button *ngIf="!(el.rdvstate===complApt || el.rdvstate===CancelApt || el.rdvstate===schedApt)"
+            (click)="gotoPayment(el.rdv_id|| 1) " class="card-link btn btn-primary m-1">Make Payment</button>
+          <button *ngIf="(el.is_review == false && el.rdvstate===complApt)" (click)="gotoReview(el.rdv_id || 1)"
+            class="card-link btn btn-primary m-1">Add review</button>
+          <button *ngIf="el.rdvstate === schedApt" (click)="gotoUpdate(el.rdv_id || 1)"
+            class="card-link btn btn-success mx-1"><i class="icon bi-pen mx-1"></i>edit</button>
+          <button (click)="gotoView(el.rdv_id || 1)" class="card-link btn btn-secondary mx-1"><i
+              class="icon bi-eye mx-1"></i>view</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

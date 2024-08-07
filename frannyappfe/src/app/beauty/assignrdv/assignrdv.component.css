@@ -1,0 +1,29 @@
+
+main{
+    font-family: 'FiraSansRegular';
+    font-size: 14px;
+    padding: 5%;
+
+}
+section{
+    border-radius: 10px;
+    border: solid 1px #777;
+    padding: 5%;
+
+}
+h1{
+    color: #F460FC;
+    font-weight: bold !important;
+    padding: 1%;
+    margin-top: 1%;
+    font-size: 30px;
+}
+
+.btn-secondary{
+    margin: 0 auto 0;
+    padding: 10px;
+    color: #fff;
+    border: none !important;
+    background:#53534F !important;
+  
+  }

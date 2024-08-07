@@ -1,0 +1,84 @@
+small{
+    color: red;
+}
+
+main{
+    font-family: 'FiraSansRegular';
+    font-size: 14px;
+    padding: 2%;
+    height: 80vh;
+    max-width: 850px;
+
+}
+section{
+    border-radius: 10px;
+    border: solid 1px #777;
+    padding: 5%;
+    margin-bottom: 50px;
+
+}
+h1{
+    color: #F460FC;
+    font-weight: bold !important;
+    padding: 1%;
+    margin-top: 1%;
+    font-size: 20px;
+}
+
+.btn-secondary{
+    padding: 10px;
+    color: #fff;
+    border-radius: 0px;
+    border: none !important;
+    background:#53534F !important;
+    float: right;
+}
+.btn-success{
+    padding: 2px;
+    height: 35px;
+    font-size: 12px;
+    color: #fff;
+    border: none !important;
+    background:#5DBAE5 !important;
+    float: right;
+  }
+.paiement{
+    border: solid 1px #777;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.attributes{
+    font-weight: bold;
+    font-size: 16px;
+    padding:2px;
+}
+
+.revadded {
+    animation: colorChange 3s infinite alternate;
+  }
+
+  @keyframes colorChange {
+    from {
+      color: #5DBAE5;
+    }
+    to {
+      color: #F460FC;
+    }
+  }
+
+  @media screen and (max-width:768px) {
+
+    section{
+        border-radius: 10px;
+        padding-bottom: 15%;
+        margin-top: 20px;
+        border: none;
+        padding: 20px;
+        height: 60vh;
+    }
+    form{
+        margin-bottom: 40px;
+    }
+  
+  }

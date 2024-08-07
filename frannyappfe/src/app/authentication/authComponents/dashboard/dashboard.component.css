@@ -1,0 +1,48 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+main {
+    margin-top: 10px !important;
+    font-family: 'FiraSansRegular';
+    height: 80dvh;
+}
+span,
+h4,i {
+    color: #F460FC;
+}
+button:hover{
+    background-color:#5DBAE5;
+
+}
+button {
+    background-color:#F460FC ;
+    color: #fff;
+    float:right;
+    width: 100px;
+    border: none;
+}
+
+.row{
+    align-items: center;
+}
+.blog_section{
+    margin-top: 5%;
+}
+.blog_section a {
+    color:#5DBAE5;
+
+}
+.social_links{
+    display: flex;
+    margin-right: 3px;
+}
+.blog_section a:hover {
+    color:#F460FC;
+
+}
+@media  screen and (max-width:900px) { 
+button {
+    background-color:#F460FC ;
+    color: #fff;
+    border: solid 1px #53534F;
+}
+    
+}

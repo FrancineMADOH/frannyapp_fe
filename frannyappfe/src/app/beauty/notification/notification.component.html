@@ -1,0 +1,58 @@
+
+<div class="container">
+    <h4 class="text-center">NOTIFICATIONS</h4>
+
+    <div class="row content">
+
+        <div class="card my-2" *ngFor="let el of notifications" id="{{el.notif_state}}">
+            <div class="card-body" >
+                <h6 class="card-title">{{ el.perso_name }} sent you a message. Contact the person through: {{ el.client_number}} </h6>
+                <button *ngIf="el.notif_state=='new'" type="button"  (click)= getId(el.notif_id) class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#biblioModal">
+                    Resolve
+                </button>
+            </div>
+            <!-- Button trigger modal -->
+          
+        </div>
+           <!-- Modal -->
+           <div class="modal fade" id="biblioModal" tabindex="-1" aria-labelledby="biblioModalLabel"
+           aria-hidden="true">
+           <div class="modal-dialog">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <h4 class="modal-title text-center fw-bold" id="biblioModalLabel"> Resolve Notification </h4>
+                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                   </div>
+            
+                    <div class="modal-body form-group my-2">
+
+                        <div *ngIf="isresolve" class="message-sent text-center m-4">
+                            <p>{{message}}</p>
+                        </div>
+
+                        <div>
+                            <form  (ngSubmit)="resolveNotif(resolveNotifForm)" #resolveNotifForm="ngForm">
+                                <textarea required
+                                name="comment" 
+                                id="comment" 
+                                ngModel 
+                                #comment="ngModel"
+                                class="form-control my-3"
+                                type="text"
+                                maxlength="300" minlength="4"
+                                placeholder="Votre Nom..."></textarea>
+                                <div class="resolve_form">
+                                    <button [disabled]="!resolveNotifForm.valid" (click)="state='resolve'"  class="btn btn-primary" type="submit">Resolve</button>
+                                    <button  class="btn btn-danger" (click)="state='fake'"  [disabled]="!resolveNotifForm.valid"  type="submit">Mark As Fake</button>
+                                </div>   
+                            </form> 
+
+                        </div>
+
+                    </div>
+               </div>
+           </div>
+       </div>
+   </div>
+ 
+</div>

@@ -1,0 +1,50 @@
+*{
+    font-family: 'FiraSansRegular';
+    font-size: 14px;
+}
+h1{
+    color: #F460FC;
+    font-weight: bold !important;
+    padding: 1%;
+    margin-top: 1%;
+    font-size: 30px;
+}
+
+.btn-secondary{
+    margin: 0 auto 0;
+    padding: 10px;
+    color: #fff;
+    border: none !important;
+    background:#53534F !important;
+    float: right;
+}
+.btn-success{
+    margin: 0 auto 0;
+    padding: 10px;
+    color: #fff;
+    border: none !important;
+    background:#5DBAE5 !important;
+  }
+
+  input,textarea{
+
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 4px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    :focus{
+        color: #212529;
+        background-color: #fff;
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+    }
+    
+  }

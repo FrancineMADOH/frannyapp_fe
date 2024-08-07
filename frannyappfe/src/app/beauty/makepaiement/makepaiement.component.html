@@ -1,0 +1,43 @@
+
+
+<main class="container" >
+    <div class="spinner-grow text-dark" role="status" *ngIf="isloading">
+        <span class="sronly sr-only">Loading...</span>
+    </div>
+
+    <div class="title"> <h1 class="text-center my-4">Franny Paiement </h1> </div>
+    <div class="paiement" *ngIf="!isloading">
+        <h3 class="text-center my-2">Bienvenue, {{rdv.client_name}} </h3>
+
+        <p *ngIf="!paid" class="text-center">Vous êtes sur le point de Régler votre facture.</p>
+        <div class="paid" *ngIf="paid">
+            <h4 class="thankyou text-center">
+               <span class="title-word-1">Merci</span>  
+               <span class="title-word-2"> pour votre </span>
+               <span class="title-word-3"> paiement </span></h4>
+            <p *ngIf="(!isauth && paid==true)">Vous pouvez maintenant fermer cette fenêtre</p>
+        </div>
+        <p class="text-center fw-bold my-2">Montant:{{rdv.rdv_price}} XAF</p>
+       
+            <form *ngIf="!paid" #paymentForm="ngForm" (ngSubmit)="makeCashPayment(paymentForm)">
+                <div class="form-group my-4">
+                    <label class="my-2" for="pm">Comment choissez vous de payer?</label>
+                    <select name="pm" id="pm" required ngModel #pm="ngModel" class="form-control">
+                        <option value="0" [selected] selected>Selectionnez une méthode de paiement</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Mobile">Mobile</option>
+                    </select>
+                    <!-- <small>*Payment mobile bientot disponible</small> -->
+                </div>
+                <p class="text-center my-4">
+                    <button type="submit" [disabled]="!paymentForm['valid']" class="btn btn-success m-2">Confirmer le
+                        paiement</button>
+                </p> 
+            </form>
+
+    </div>
+
+   
+    <button class="btn btn-secondary my-2" *ngIf="isauth" (click)="back()">Back to rendez-vous List</button>
+
+</main>

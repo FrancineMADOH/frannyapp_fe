@@ -1,0 +1,46 @@
+.footer {
+    height: 12vh;
+    background-color: #53534F;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+
+}
+
+.brand {
+    color: #F460FC;
+    font-family: 'Fasthand';
+    list-style-type: none;
+    text-align: center;
+}
+
+.socials {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    color: #F460FC;
+    text-decoration: none;
+}
+
+a:active {
+    color: #fff;
+}
+
+/* #5DBAE5(bleu), #F460FC(rose), #196C08(vert), #C7B14A(gold) #AA9225(satin gold) #53534F(gray)*/
+
+@media screen and (max-width:768px) {
+    .footer {
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 99999;
+    }
+  
+}

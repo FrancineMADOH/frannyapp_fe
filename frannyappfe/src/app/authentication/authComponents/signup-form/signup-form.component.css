@@ -1,0 +1,86 @@
+.signup-wrapper{
+    font-family: 'FiraSansRegular';
+    margin:0 auto;
+    text-align: center;
+    border:solid #9c9c9a 1px;
+    border-radius: 5%;
+    padding:1%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+small{
+    color: red;
+}
+
+.signup-header{
+    margin:20px 0 5px 0 ;
+}
+
+.signup-form{
+    margin:10px 0 15px 0 ;
+}
+
+.signup-footer{
+    margin:5px 0 5px 0 ;
+}
+h3,a{
+    color: #5DBAE5;
+}
+button:hover{
+    background-color:#53534F;
+    color:#fff;
+
+}
+
+h4{
+    font-family: 'Fasthand';
+}
+
+button{
+    background-color: #5DBAE5;
+    color:#fff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  z-index: 9;
+  border: 0;
+}
+span{
+    color: red;
+    font-size: 0.8em;
+}
+
+input {
+
+    padding: 7px;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #fbfbfb;
+    border: 2px solid transparent;
+    height: 36px;
+    box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%), 0 1px 1.5px 0 rgb(0 0 0 / 5%);
+    :focus{
+        border: 2px solid #000;
+        border-radius: 4px;
+    }
+
+}
+/* #5DBAE5(bleu), #F460FC(rose), #196C08(vert), #C7B14A(gold) #AA9225(satin gold) #53534F(gray)*/
+
+

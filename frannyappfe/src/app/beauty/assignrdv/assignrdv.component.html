@@ -1,0 +1,25 @@
+
+<main class="container">
+    <h1 class="text-center">Assign Beautifyer</h1>
+
+    <section class="m-4">
+        <form #assignrdvForm="ngForm" (ngSubmit)="assignApointment(assignrdvForm)">
+            <div class="form-group"  >
+                <label for="doneby">Choose a Beautifyer</label>
+                <select 
+                name="doneby"
+                id="doneby"
+                required
+                ngModel
+                #doneby="ngModel"
+                class="form-control">
+                <option [selected] selected>Select Beauty agent</option>
+                <option *ngFor="let el of BeautyfyerList"  value="{{el.beautif_id}} ">{{el.bname}}</option>
+            </select>
+            </div>
+            <button type="submit" [disabled]="!assignrdvForm['valid']"
+             class="btn btn-secondary my-4">Assign</button>
+        </form>
+            
+    </section>
+</main>

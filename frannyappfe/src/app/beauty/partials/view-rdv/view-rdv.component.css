@@ -1,0 +1,137 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.attributes{
+    font-weight: bold;
+    font-size: 14px;
+    padding:2px;
+  }
+  
+
+.btn-success{
+    padding: 10px;
+    background:#5DBAE5 !important;
+    color: #fff;
+    border: none !important;
+  }
+ 
+
+  .Cancelled {
+    color: red;
+    font-weight: bold;
+}
+
+.Scheduled {
+    color: #5DBAE5;
+    font-weight: bold;
+
+}
+
+.Ongoing {
+    color: #F460FC;
+    font-weight: bold;
+
+}
+
+.Completed {
+    color: #53534F;
+    font-weight: bold;
+
+}
+
+
+
+/**************************************************************************************/
+main{
+    padding: 2%;
+    font-family: 'FiraSansRegular';
+    font-size: 14px;
+    margin: 0 auto;
+   
+}
+h5{
+    font-weight: bold;
+    color: #F460FC !important;
+    font-size: 18px !important;
+}
+.card-body > h6{
+    font-weight: bold;
+    color: #17c0eb;
+}
+
+  
+  hr{
+    border: #000 solid 2px;
+    width: 100%;
+  }
+  
+  .btn-secondary{
+    margin: 0 auto 0;
+    padding: 10px;
+    color: #fff;
+    border: none !important;
+    border-radius: 8px;
+    background:#53534F !important;
+  
+  }
+  .btn-secondary:hover{
+    margin: 0 auto 0;
+    padding: 10px;
+    color: #fff;
+    border: none !important;
+    border-radius: 8px;
+    background:#17c0eb!important;
+  
+  }
+  .card{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  }
+  
+  .container{
+    font-family: 'FiraSansRegular';
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .container .box{
+    width: calc(40% - 10px);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    border-radius: 5px;
+  }
+  
+
+  .box .image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+  }
+  .box p{
+    text-align: justify;
+    margin-top: 2px;
+  }
+  .empname{
+    color: #F460FC;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  
+ 
+  @media (max-width:768px){
+    main{
+      height: 100%;
+    }
+    .container .box{
+      width: 100%;
+    }
+  }
+  

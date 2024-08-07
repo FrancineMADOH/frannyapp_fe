@@ -1,0 +1,227 @@
+<div class="main container">
+
+ 
+
+  <h1 class="text-center my-4">APPOINTEMENT DASHBOARD</h1>
+  
+  <div class="spinner-border" role="status" *ngIf="!isLoading" >
+    <span class="sr-only">Loading...</span>
+  </div>
+
+  <div class="dashboard" *ngIf="isLoading" >
+
+  <div class="row my-3">
+    <div class="col-lg-3 my-3 ">
+      <div class="card">
+        <div class="text-center icon">
+          <i class="bi bi-person-workspace"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.total_beautif}}</h5>
+          <p class="card-text">Beautifyer(s)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 my-3">
+      <div class="card">
+        <div class="text-center icon">
+          <i class="bi bi-card-list"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.total_pres}}</h5>
+          <p class="card-text">Prestation(s)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 my-3">
+      <div class="card">
+        <div class="text-center icon">
+          <i class="bi bi-chat-dots"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.total_review}}</h5>
+          <p class="card-text">Reviews(s)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 my-3">
+      <div class="card">
+        <div class="text-center icon">
+          <i class="bi bi-calendar"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.total_rdv}}</h5>
+          <p class="card-text">Appointments(s)</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- second row -->
+  <div class="row dashboard-metrics">
+
+    <div class="col-lg-3 my-3">
+      <div class="card" >
+        <div class="text-center icon">
+          <i class="bi bi-calendar-date"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.sched_apt}}</h5>
+          <p class="card-text">Scheduled Appointement(s)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 my-3">
+      <div class="card">
+        <div class="text-center icon">
+          <i class="bi bi-calendar2-check"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.comp_apt}}</h5>
+          <p class="card-text">Completed Appointements(s)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 my-3">
+      <div class="card">
+        <div class="text-center icon">
+          <i class="bi bi-calendar-x"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.canc_apt}}</h5>
+          <p class="card-text">Cancelled Appointements(s)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 my-3">
+      <div class="card">
+        <div class="text-center icon">
+          <i class="bi bi-hourglass-top"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.ong_apt}}</h5>
+          <p class="card-text">Ongoing Appointments(s)</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- third row -->
+  <div class="row dashboard-metrics">
+
+    <div class="col-lg-3 my-3">
+      <div class="card">
+        <div class="text-center icon">
+          <i class="bi bi-envelope"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.rev_apt}}</h5>
+          <p class="card-text">Reviewed Appointement(s)</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 my-3">
+      <div class="card">
+        <div class="text-center icon">
+          <i class="bi bi-envelope"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.total_notif}}</h5>
+          <p class="card-text">Notifications</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 my-3">
+      <div class="card" >
+        <div class="text-center icon">
+          <i class="bi bi-piggy-bank"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.earnings}} XAF</h5>
+          <p class="card-text">Totally Earn</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 my-3">
+      <div class="card" >
+        <div class="text-center icon">
+          <i class="bi bi-cash-coin"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.month_earnings}} XAF</h5>
+          <p class="card-text">Earn this Month</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-lg-3">
+      <div class="card" style="width: 18rem;">
+        <div class="text-center icon">
+          <i class="bi bi-hourglass-top"></i>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{metrics.ong_apt}}</h5>
+          <p class="card-text">Ongoing Appointments(s)</p>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+
+  <div class="row ranking_metrics">
+    <div class="col-lg-5 mx-2">
+      <h4 class="text-center">Top Beautifyers</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Name</th>
+            <th scope="col">Earnings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let el of topEarners; index as i">
+            <th scope="row">{{i+1 }} </th>
+            <td>{{el.bname }} </td>
+            <td>{{el.earned }} XAF </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+      <div class="col-lg-6 mx-2">
+        <h4 class="text-center">Top Prestations</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Rank</th>
+              <th scope="col">Title</th>
+              <th scope="col">Earnings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let el of prestations;index as i">
+              <th scope="row">{{ i+1 }} </th>
+              <td>{{el.title }} </td>
+              <td>{{el.earned }} XAF </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+
+  </div>
+</div>
+
+</div>

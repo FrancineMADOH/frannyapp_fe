@@ -1,0 +1,9 @@
+{
+    "/api/*":{
+        "target": "https://frannynetwork.onrender.com/api",
+        "secure":false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+   
+}

@@ -1,0 +1,19 @@
+<div class="row container-fluid">
+    <div class="col-lg-12 m-2">
+        <h1 class="text-center m-2">All Beautifyers</h1>
+        <button class="btn btn-secondary m-2" (click)="gotoAddBeautifyerPage()" >
+            <i class="bi bi-plus"></i>New beautifyer</button>
+        <!-- <div class="searchFormClass col-lg-4">
+            <form #searchbeautifyer="ngForm" (ngSubmit)="searchBeautifyerTerm(searchbeautifyer)" class="d-inline">
+                <div class="form-group">
+                    <input id="search" minlength="5" name="search" required ngModel #search="ngModel" placeholder="Search..."
+                        type="text">
+                    <button [disabled]="!searchbeautifyer.valid" class="btn btn-success mx-2" type="submit">Search</button>
+                </div>
+            </form>
+        </div> -->
+    </div>
+    <div class="col-lg-12">
+        <app-beautifyer-card></app-beautifyer-card>
+    </div>
+</div>

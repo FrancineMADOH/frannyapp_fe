@@ -1,0 +1,54 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+/* #5DBAE5(bleu), #F460FC(rose), #196C08(vert),
+ #C7B14A(gold) #AA9225(satin gold) #53534F(gray)*/
+
+
+*{
+    font-family: 'FiraSansRegular';
+    font-size: 14px;
+}
+h1{
+    color: #F460FC;
+    font-weight: bold !important;
+    padding: 1%;
+    margin-top: 1%;
+    font-size: 30px !important;
+}
+
+.btn-secondary{
+  margin: 0 auto 0;
+  padding: 10px;
+  background:#5DBAE5 !important;
+  color: #fff;
+  border: none !important;
+}
+
+
+h5 {
+  font-weight: bolder;
+  font-size: 21px;
+}
+span {
+  font-weight: bold;
+  font-size: 21px;
+  padding-right: 10px;
+  letter-spacing: normal;
+  /* color: rgb(211, 14, 211); */
+}
+p, h6 {
+  font-size: 19px;
+  letter-spacing: 1.5px;
+}
+button {
+  /* background: purple; */
+  color: white;
+}
+section {
+  display: flex;
+  flex-wrap: wrap;
+  z-index: -1;
+}
+.card{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}

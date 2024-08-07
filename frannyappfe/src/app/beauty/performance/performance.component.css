@@ -1,0 +1,114 @@
+
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.main {
+  /* border: 1px solid red; */
+  padding: 1%;
+}
+*{
+  font-family: 'FiraSansRegular';
+  font-size: 16px;
+}
+h1{
+    color: #F460FC;
+    font-weight: bold !important;
+    padding: 1%;
+    font-size: 30px;
+    text-align: center;
+}
+.dashboard-metrics{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+h5{
+    color: #F460FC;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h4{
+    color: #5DBAE5;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+.card{
+    border-radius: 12px;
+    width: 14rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 22px;
+    animation: slideInUp ease 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes slideInUp {
+    0% {
+         opacity: 0;
+         transform: translateY(-50px);
+         }
+ 
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+        background-color: #fff;
+
+     }
+    
+  }
+  @-moz-keyframes slideInUp {
+    0% { opacity: 0;
+        transform: translateY(-50px);
+        background-color: #5DBAE5;
+     }
+    100% {
+         opacity: 1; 
+         transform: translateY(0);
+        background-color: #fff;
+
+        }
+  }
+  
+  @-webkit-keyframes slideInUp {
+    0% { opacity: 0; transform: translateY(-50px);
+        background-color: #53534F; }
+  
+    100% { opacity: 1; transform: translateY(0);
+        background-color: #fff;}
+  }
+  
+  @-o-keyframes slideInUp {
+    0% { opacity: 0;  transform: translateY(-50px);
+        background-color: #53534F;}
+    100% { opacity: 1; transform: translateY(0);
+        background-color: #fff;}
+  }
+  
+  @-ms-keyframes slideInUp {
+    0% { opacity: 0; transform: translateY(-50px);
+        background-color: #53534F; }
+    100% { opacity: 1;transform: translateY(0);
+        background-color: #fff; }
+  }
+
+.icon i{
+    font-size:40px;
+    color: #5DBAE5;
+}
+.icon{
+    margin-top: -25px;
+} 
+
+.ranking_metrics{
+    display: flex;
+}
+
+@media screen  and(max-width:768px){
+    .card{
+        margin-bottom: 50px;
+    }
+    
+}

@@ -1,0 +1,50 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.form-group {
+  display: flex;
+}
+.beauty-search {
+  padding: 8px 12px;
+  width: 35%;
+  border-radius: 8px;
+  border: 0.5px solid grey;
+}
+.search-bar {
+  /* border: 5px dotted magenta; */
+  padding: 0 12px;
+  width: 100%;
+}
+section {
+  display: flex;
+  /* border: 2px solid green; */
+  width: 100%;
+  /* gap: 45px; */
+  gap: 5%;
+  padding: 0 12px;
+  z-index: -1;
+  flex-wrap: wrap;
+}
+h5 {
+  font-weight: bolder;
+}
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+*{
+  font-family: 'FiraSansRegular';
+  font-size: 14px;
+}
+
+#btn-secondary{
+  margin: 0 auto 0;
+  padding: 10px;
+  background:#53534F !important;
+  color: #fff;
+  border: none !important;
+}
+
+.btn-success{
+  padding: 10px;
+  background:#5DBAE5 !important;
+
+  color: #fff;
+  border: none !important;
+}

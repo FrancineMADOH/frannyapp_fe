@@ -1,0 +1,32 @@
+<div class="container main">
+    <h1 class="text-center">All admins</h1>
+  
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Admin Name</th>
+              <th scope="col">Username</th>
+              <th scope="col">Email</th>
+              <th scope="col">Joined Date</th>
+              <th scope="col"  *ngIf="isSuperAdmin" >Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let admin of adminList">
+              <th scope="row">{{admin.admin_id}} </th>
+              <td>{{admin.admin_name}}</td>
+              <td>{{admin.username}}</td>
+              <td>{{admin.email}}</td>
+              <td>{{admin.activ_date.split(" ")[0]}}</td>
+              <td *ngIf="isSuperAdmin">
+                <form action="">
+                  <button (click)="deleteAdminAccount(admin.admin_id || 1)" class="btn btn-danger" *ngIf="!isSuperAdmin" type="submit"><i class="icon bi-trash mx-1"></i>Delete</button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+</div>

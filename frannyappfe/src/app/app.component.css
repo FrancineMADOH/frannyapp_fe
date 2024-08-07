@@ -1,0 +1,11 @@
+html,body{
+    min-height:100vh !important;
+    height: auto;
+
+}
+
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.principal_container {
+    height: fit-content !important;
+}

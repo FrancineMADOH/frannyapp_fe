@@ -1,0 +1,85 @@
+<div class="col-lg-9">
+  
+    <form #addArticle="ngForm" enctype="multipart/form-data" (ngSubmit)="onSubmit()">
+      <div class="form-group my-2">
+          <label for="title">Title</label>
+          <input type="text" 
+          ngModel
+          maxlength="150"
+          name="title" 
+          id="title" 
+          #title="ngModel"
+          class="form-control" 
+          required>
+          <small *ngIf="!title.valid && title.touched ">Please provide a valid title </small>
+        </div>
+        <div class="form-group my-2">
+          <label for="category">Category</label>
+          <select 
+          class="form-select"
+           name="category"  
+           ngModel
+           required
+           #category="ngModel"
+           id="category">
+            <option selected>Select category</option>
+            <option *ngFor="let cat of categories" value="{{cat}}">{{cat}}</option>
+          </select>
+          <small *ngIf="!category.valid && category.touched">Please choose a category</small>
+        </div> 
+        <div class="form-group my-2">
+          <label for="summary">Description</label>
+          <textarea  
+          name="summary"  
+          id="summary" 
+          ngModel
+          #summary="ngModel"
+          required
+          maxlength="300"
+          class="form-control" required></textarea>
+          <small  *ngIf="summary.touched && !summary.valid">Please provide a valid title</small>
+        </div>
+        <div class="form-group my-2">
+          <label for="content">Content (10000 characters...)</label>
+          <textarea 
+          ngModel
+          #content="ngModel"
+          maxlength="10000"
+          name="content"
+          id="content"
+          class="form-control"
+          oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+          required></textarea>
+          <small  *ngIf="content.touched && !content.valid">Please provide a valid content</small>
+        </div>
+        <div  *ngIf="iscreateMode" class="my-4 form-group file-upload">
+              <label for="illustration">Add Illustration</label>
+              <input 
+              required
+              type="file"
+              multiple 
+              (change)="selectImage($event)"
+              accept="image/*"
+              ngModel
+              name="illustration"  
+              id="illustration">
+           </div>
+           <div *ngIf="iscreateMode" class="form-group my-2">
+            <label for="imgcredit">Image Credit</label>
+            <input type="text" 
+            ngModel
+            maxlength="200"
+            name="imgcredit" 
+            id="imgcredit" 
+            #imgcredit="ngModel"
+            class="form-control" 
+            required>
+            <small *ngIf="!imgcredit.valid && imgcredit.touched ">Post credit is mandatory </small>
+          </div>
+           <button type="submit"  [disabled]="!addArticle.valid" class="btn btn-success">Publish</button>
+           <button (click)="backToPosts()" class="btn btn-secondary m-3">Cancel</button>
+          </form>
+ 
+
+
+</div>

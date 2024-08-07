@@ -1,0 +1,155 @@
+
+<div class="container">
+    <form #addRendezvousForm="ngForm" (ngSubmit)="onSubmit()">
+        <!-- <div class="form-group my-2">
+            <label for="client_name">Votre nom</label>
+            <input type="text"  class="form-control"
+            name="client_name"
+            required
+            maxlength="100"
+            ngModel
+            #client_name="ngModel"
+            id="client_name">
+            <small style="color:red;" *ngIf="!client_name.valid && client_name.touched">Please enter your name</small>
+        </div> -->
+        <div class="form-group">
+            <label for="client_phone">Enter your phone number</label>
+            <input type="text"
+             id="client_phone"
+             ngModel
+             #client_phone="ngModel"
+             maxlength="9"
+             required
+             placeholder="[0-9] -  max 9 characters"
+            pattern="[0-9]*" name="client_phone" class="form-control">
+            <small *ngIf="!client_phone.valid && client_phone.touched" style="color:red;">Please enter a valid phone number</small>
+        </div>
+        <div class="form-group my-2">
+            <label for="client_email">Enter your Email address</label>
+            <input class="form-control"
+            ngModel
+            #client_email="ngModel"
+            type="email" name="client_email" id="client_email">
+            <small *ngIf="!client_email.valid && client_email.touched" style="color:red;">Invalid email</small>
+        </div>
+        <div class="form-group my-2">
+            <label for="rdvdate">Choose a date for your appointement </label>
+            <input  class="form-control"
+            ngModel
+            required
+            min="{{restrict_date}}"
+            #rdvdate="ngModel"
+            placeholder="choose a date"
+            type="datetime-local"
+            name="rdvdate" id="rdvdate">
+            <small *ngIf="!rdvdate.valid && rdvdate.touched"  style="color:red;">Please choose a date for your appointment</small>
+        </div>
+
+        <div class="form-group my-2">
+            <label for="prestation">Choisissez une prestation</label>
+            <select class="form-control"
+            ngModel
+            #prestation="ngModel"
+            required
+            name="prestation" id="prestation">
+                <option selected>Select  Prestation</option>
+                <option *ngFor="let el of prestations" value="{{el.pres_id}}">{{el.title}} </option>
+            </select>
+            <small *ngIf="!prestation.valid && prestation.touched" style="color:red;">Please choose a prestation</small>
+        </div>
+        <!-- <div class="form-group my-2" *ngIf="!iscreateMode">
+            <label for="state">Appointement state</label>
+            <select class="form-control"
+             name="state" id="state">
+                <option selected>State</option>
+                <option *ngFor="let el of appointment_state" value="el">el</option>
+            </select>
+        </div> -->
+
+        <!-- <div class="form-group my-2">
+            <label for="category">Prestation category</label>
+                <select class="form-control"
+                required
+                ngModel
+                #category="ngModel"
+                name="category" id="category">
+                <option value="">Choose Category</option>
+                    <option *ngFor="let val of categories"  value="{{val}}">{{val}}</option>
+                </select>
+            </div> -->
+            <!-- <div class="form-group my-2">
+                <label for="rdvtype">Choose Appointment type</label>
+                <select class="form-control"
+                required
+                ngModel
+                #rdvtype="ngModel"
+                name="rdvtype" id="rdvtype">
+                    <option value="0" selected>Appointment type</option>
+                    <option *ngFor="let val of appointment_type" value="{{val}}">{{val}}</option>
+                </select>
+                <small *ngIf="!prestation.valid && prestation.touched" style="color:red;">Please choose a type for your prestation</small>
+            </div> -->
+        <div class="form-group my-2">
+        <label for="rdv_price">Type de Seance</label>
+            <select class="form-control"
+            required
+            ngModel
+            #rdv_price="ngModel"
+            name="rdv_price" id="rdv_price">
+            <option selected value="0">Choisissez votre séance</option>
+            <option >Classic</option>
+            <option >Gold</option>
+            <option>Premium</option>
+            </select>
+        </div>
+        <small *ngIf="!rdv_price.valid && rdv_price.touched" >Choose the type of prestation you want</small>
+        <div class="form-group my-2">
+            <label for="ville">Choose your Town</label>
+            <select class="form-control"
+            required
+            ngModel
+            #ville="ngModel"
+            name="ville" id="ville">
+                <option value="" selected>Town</option>
+                <option *ngFor="let el of allVille" value="{{el.ville}} ">{{el.ville}} </option>
+            </select>
+            <small *ngIf="!ville.valid && ville.touched" style="color:red;">Please choose a town</small>
+        </div>
+        <div class="form-group my-2">
+            <label for="quartier">Choose your Quartier</label>
+            <input class="form-control"
+            required
+            ngModel
+            #quartier="ngModel"
+            name="quartier" id="quartier">
+                <!-- <option value="" selected>Quartier</option>
+                <option *ngFor="let el of allLocation" value="{{el.quartier}}">{{el.quartier}}</option>
+            -->
+         
+            <small *ngIf="!quartier.valid && quartier.touched" style="color:red;">Please choose a your quartiier</small>
+        </div>
+        <div class="form-group my-2">
+            <label for="comments">Commentaires</label>
+            <textarea class="form-control"
+            id="comments"
+            ngModel
+            #comments="ngModel"
+            name="comments"></textarea>
+        </div>
+
+        <!-- <div class="form-group my-2">
+            <label for="rdvcode">Appointement Code</label>
+                <input type="text"
+                class="form-control"
+                placeholder="code du rendez-vous"
+                readonly
+                ngModel
+                value="{{this.rdvcode}}"
+                #rdvcode="ngModel"
+                name="rdvcode" id="rdvcode">
+        </div> -->
+        <button type="submit" [disabled]="!addRendezvousForm['valid']" class="btn btn-success m-3  ">{{action}}</button>
+    </form>
+    <hr>
+    <button (click)="backToRdv()" class="btn btn-secondary m-3">Cancel</button>
+</div>

@@ -1,0 +1,126 @@
+
+
+<div class="container" style="max-width: 800px; ">
+    <form #addBeautifForm="ngForm" (ngSubmit)="onSubmit()" >
+        <div class="form-group-my-2">
+            <label for="bname">Beautifyer Name</label>
+            <input class="form-control" type="text" id="bname"
+            required
+            maxlength="100"
+            ngModel
+            #bname="ngModel"
+            name="bname">
+            <small *ngIf="!bname.valid && bname.touched" style="color:red" >Please provide beautifyer name</small>
+        </div>
+        <div class="form-group my-2">
+            <label for="email">Beautifyer Email</label>
+            <input class="form-control"  type="email"
+            required
+            maxlength="100"
+            ngModel
+            #email="ngModel"
+            name="email" id="email">
+            <small *ngIf="!email.valid && email.touched" style="color:red" >Please provide a valid email</small>
+        </div>
+        <div class="form-group my-2">
+            <label for="phone">Beautifyer Phone</label>
+            <input type="text" class="form-control" type="text" id="phone"
+            required
+            maxlength="9"
+            minlength="9"
+            pattern="[0-9]*"
+            ngModel
+            #phone="ngModel"
+            name="phone" >
+            <small *ngIf="!phone.valid && phone.touched" style="color:red" >Please provide a valid phone number</small>
+    
+        </div>
+        <div class="form-group my-2">
+            <label for="id_number">Beautifyer ID Number</label>
+            <input type="text" class="form-control" type="text" id="phone"
+            required
+            maxlength="9"
+            minlength="9"
+            pattern="[0-9]*"
+            ngModel
+            #id_number="ngModel"
+            name="id_number" >
+            <small *ngIf="!id_number.valid && id_number.touched" style="color:red" >Please provide a valid phone number</small>
+    
+        </div>
+        <div class="form-group my-2">
+            <label for="ville">Town</label>
+            <select class="form-control"
+            required
+            ngModel
+            #ville="ngModel"
+            name="ville" id="ville">
+                <option value="0" [selected]>Town</option>
+                <option *ngFor="let el of allVille" value="{{el.ville}}">{{ el.ville }} </option>
+            </select>
+            <small *ngIf="!ville.valid && ville.touched" style="color:red" >Please provide a town</small>
+    
+        </div>
+        <div class="form-group my-2">
+            <label for="quartier">Beautifyer Quartier</label>
+            <select class="form-control"
+            required
+            ngModel
+            #quartier="ngModel"
+            name="quartier" id="quartier">
+                <option value="0" >Quartier</option>
+                <option *ngFor="let location of allLocation" value="{{location.quartier}}">{{location.quartier}} </option>
+            </select>
+            <small *ngIf="!quartier.valid && quartier.touched" style="color:red" >Please provide a Quartier for the beautif</small>
+        </div>
+        <div class="form-group my-2">
+            <textarea name="details"
+            required
+            ngModel
+            maxlength="200"
+            #details="ngModel"
+            class="form-control"
+            placeholder="add details"
+            id="details"></textarea>
+            <small *ngIf="!details.valid && details.touched" style="color:red" >Please add some detail about beautif</small>
+        </div>
+    
+        <div class="form-group my-2">
+            <label for="recruit_date">Beautifyer Recruit Date</label>
+            <input class="form-control" type="date"
+            ngModel
+            required
+            #recruit_date="ngModel"
+            name="recruit_date" id="recruit_date">
+            <small *ngIf="!recruit_date.valid && recruit_date.touched" style="color:red" >Please provide recruit date</small>
+        </div>
+    
+        <div class="form-group my-2">
+            <label for="create_by">Beautifyer created by</label>
+            <select name="create_by"
+            ngModel
+            #create_by="ngModel"
+            class="form-control"
+            required
+            id="create_by">
+                <option value="0" >Selectionner</option>
+                <option *ngFor="let user of allUsers" value="{{user.admin_id }} ">{{user.admin_name }}</option>
+            </select>
+            <small *ngIf="!create_by.valid && create_by.touched" style="color:red" >Choose admin who created beautifyers</small>
+        </div>
+        <div class="form-group my-2">
+            <label for="beautifcode">Beautifyer Code</label>
+                <input type="text"
+                class="form-control"
+                placeholder="code de l'agent"
+                readonly
+                ngModel
+                value="{{this.beautifcode}}"
+                #beautifcode="ngModel"
+                name="beautifcode" id="beautifcode">
+        </div>
+        <button type="submit" class="btn btn-success m-2 "[disabled]="!addBeautifForm['valid']"  >Save</button>
+        <button class="btn btn-secondary" (click)="backtoBeautifList()" >Cancel</button>
+    </form>
+    </div>
+

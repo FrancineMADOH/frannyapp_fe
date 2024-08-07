@@ -1,0 +1,17 @@
+
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+*{
+    font-family: 'FiraSansRegular';
+    font-size: 14px;
+}
+main{
+    padding: 2%;
+}
+h1{
+    color: #F460FC;
+    font-weight: bold !important;
+    padding: 1%;
+    margin-top: 1%;
+    font-size: 30px !important;
+}

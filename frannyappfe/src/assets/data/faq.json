@@ -1,0 +1,20 @@
+[
+    {
+        "faq_id":1,
+        "question":"la prestation inclut elle un lavage des cheveux?",
+        "reponse":"Non, les prix desprestation s'appliquent aux cheveux propre.",
+        "category":"Coiffure"
+    },
+    {
+        "faq_id":2,
+        "question":"Les paiement mobiles sont ils accepte ?",
+        "reponse":"Oui,Il est possible de regler votre prestation via un paiement mobile",
+        "category":"General Information"
+    },
+    {
+        "faq_id":3,
+        "question":"Quel est le temps maximum entre ma reservation et ma prestation ?",
+        "reponse":"Nos prestataires sont disponibles dans chaque quartier de la ville de yaounde afin de s'assurer que les prestation se font dans les plus bref delai (24h minimum 72h maximum) en fonction de votre demande",
+        "category":"General Information"
+    }
+]

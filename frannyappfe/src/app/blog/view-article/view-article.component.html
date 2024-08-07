@@ -1,0 +1,194 @@
+<div class="spinner-grow text-dark  m-5" role="status" *ngIf="loading">
+    <span class="sronly sr-only text-center  m-5">Loading...</span>
+</div>
+
+<div class=" container-fluid" *ngIf="!loading">
+    <div class="header">
+        <button *ngIf="isAdmin" class="btn btn-secondary m-3" (click)="editblogPost(post.post_id)">Edit</button>
+        <button class="btn btn-primary m-3" (click)="backtoPost()">Tous les articles</button>
+    </div>
+    <div class="body">
+        <div class="row">
+            <div class="col-lg-9 px-3 offset-lg-1">
+                <div class="jumbotron my-2">
+                    <h1 class="text-center">{{post.title }} </h1>
+                    <div class="text-center lead m-4">
+                        <p>
+                            <span class="attributes">Categorie:</span> <span>{{post.category}}</span> | <span
+                                class="attributes">Publié le:</span> <span>{{ post.create_at.split(',')[0] }}</span>
+
+                        </p>
+                        <p>
+                            <span> {{post.admin_name}} |</span>
+
+                            <span>
+                                <a href="{{post.facebook_url}}" target="_blank"><i class="bi bi-facebook mx-2"></i></a>
+
+                            </span>
+                            <span>
+                                <a href="{{post.linkedin_url}}" target="_blank"><i class="bi bi-linkedin mx-2"></i></a>
+
+                            </span>
+                            <span>
+                                <a href="{{post.twitter_url}}" target="_blank"><i class="bi bi-twitter mx-2"></i></a>
+
+                            </span>
+                        </p>
+
+                    </div>
+                    <div class="text-center">
+                        <div *ngIf="env=='test'">
+                            <img src="/assets/images/family.png" class="img img-fluid" alt="enviromennt de test">
+                        </div>
+                        <figure *ngIf="env != 'test'" >
+                            <img class="img img-fluid"  [src]="post.illustration" alt="BlogPost illustration">
+                            <figcaption>Credit: {{ post.imgcredit }} </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div [innerHTML]="html" class="content text-justfy">
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="action col-lg-9 offset-lg-1">
+            <!-- Button trigger modal -->
+            <div class="actions text-center">
+                <div>
+                    <!-- Button trigger modal   </i>-->
+                    <button type="button" [ngClass]="hasliked" id="like" class="btn   m-3" data-bs-toggle="modal" data-toggle="tooltip"
+                        data-placement="top" title="Add Like" data-bs-target="#likeModal">
+                        <i class="bi bi-heart-fill"></i> {{post.applause}}
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" *ngIf="!commentsubmit" id="likeModal" tabindex="-1"
+                        aria-labelledby="likeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="biblioModalLabel">Entrez votre email pour aimer cet article</h5>
+
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body like_form">
+                                <form id="like_form"  #likeForm="ngForm"
+                                    (ngSubmit)="onbpLike(likeForm)">
+                                    
+                                        <input ngModel #email="ngModel" type="email" class="form-control" required
+                                        minlength="8" maxlength="100" name="email" class="input-like m-1" id="email" aria-describedby="emailHelp"
+                                        placeholder="Votre email">                     
+                                    
+                                    <button class="button-like" type="submit" data-bs-dismiss="modal" [disabled]="likeForm.invalid">Like</button>
+                                    <small style="color: red;" *ngIf="email.invalid && email.touched">Email non valide</small>
+                                </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn   m-3" id="addcomment" data-bs-toggle="modal" data-toggle="tooltip"
+                        data-placement="top" title="Add Comment" data-bs-target="#commentModal">
+                        <i class="bi bi-chat mx-2"></i>{{ commentList.length}}
+                    </button>
+                </div>
+
+                <!--share area-->
+                <div>
+                    <button (click)="shareContent()" id="shareButton" data-toggle="tooltip" data-placement="top" title="Share to whatsapp" class="btn">
+                        <i class="bi bi-share"></i> 
+                    </button>
+
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" *ngIf="!commentsubmit" id="commentModal" tabindex="-1"
+                    aria-labelledby="commentModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="biblioModalLabel">Ajouter un commentaire</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="comment_form" ngClass="{{comment_class}}" #commentForm="ngForm"
+                                    (ngSubmit)="onComment(commentForm)">
+                                    <div class="form-group  my-2">
+                                        <input ngModel #user_name="ngModel" type="user_name" class="form-control"
+                                            minlength="8" name="user_name" id="user_name"
+                                            aria-describedby="user_nameHelp" placeholder="Votre nom">
+                                    </div>
+                                    <small *ngIf="user_name.invalid && user_name.touched">Ce champs est requis</small>
+                                    <div class="form-group  my-2">
+                                        <input ngModel #email="ngModel" type="email" class="form-control" required
+                                            minlength="8" name="email" id="email" aria-describedby="emailHelp"
+                                            placeholder="Votre email (Nous ne le publirons pas)">
+                                    </div>
+                                    <small *ngIf="email.invalid && email.touched">Ce champs est requis</small>
+                                    <div class="form-group  my-2">
+                                        <textarea ngModel #comment_body="ngModel" type="comment_body"
+                                            class="form-control" required minlength="30" maxlength="300" name="comment_body"
+                                            id="comment_body" aria-describedby="comment_bodyHelp"
+                                            placeholder="30 - 300 characters max"></textarea>
+                                    </div>
+                                    <small *ngIf="comment_body.invalid && comment_body.touched">Ce champs est requis</small>
+                                    <button class="btn btn-primary" type="submit"
+                                        [disabled]="commentForm.invalid">Ajouter</button>
+                                </form>
+                                <p *ngIf="commentsubmit" class="text-center">{{succesMessage}} </p>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comment-list">
+                <h3 class="text-center">Commentaires</h3>
+                <div class="card m-2" *ngFor="let comment of commentList">
+                    <div class="card-body">
+                        <p class="card-title">
+                            <span class="fw-bold m-2">{{comment.user_name}} </span>
+                            <span class="text-muted m-4">{{comment.comment_date}} </span>
+                        </p>
+                        <p class="card-text ">{{comment.comment_body}} </p>
+                        <form (ngSubmit)="deleteComment(comment.comment_id||1)">
+                            <button *ngIf="isAdmin" type="submit" class="btn btn-danger">Delete comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <hr>
+    <div class="more_articles">
+        <h1 class="text-center">Toutes les catégories</h1>
+        <div class="row category_links">
+            <div class="col-lg-4 feminity">
+                <h3>Féminité</h3>
+                <a class="text-center" routerLink="/posts/Feminity">Voir plus...</a>
+            </div>
+            <div class="col-lg-4 maternity">
+                <h3>Maternité</h3>
+                <a routerLink="/posts/Maternity">Voir plus...</a>
+            </div>
+            <div class="col-lg-4 family">
+                <h3>Famille</h3>
+                <a routerLink="/posts/Family">Voir plus...</a>
+            </div>
+        </div>
+    </div>
+    <div class="text-center p-2 m-2">
+        <small>special thanks to <a href="http://undraw.co" target="_blank" rel="noopener noreferrer">undraw </a>for their images</small>
+    </div>
+
+
+</div>

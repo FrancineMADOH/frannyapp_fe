@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="spinner-grow text-center" role="status" *ngIf="loading">
+    <span class="sr-only">Loading...</span>
+  </div>
+    <div class="text-center my-2" *ngIf="!loading">
+      <div class="box card">
+        <div class="image">
+          <img src="img3.jpeg" alt="">
+        </div>
+        <div>
+          <p class="text-center empname">{{ beautif.bname }} </p>
+          <h5>FBA/{{ beautif.recruit_date.split('-')[0].slice(2,4)
+            }}/{{beautif.recruit_date.split('-')[1]}}/00{{beautif.beautif_id}}
+          </h5>
+
+          <p><span class="attributes">Address: </span>{{ beautif.ville }}<span class="quartier"> -
+              {{beautif.quartier}}</span></p>
+          <p><span class="attributes">Phone:</span> {{beautif.phone}}</p>
+          <p><span class="attributes">Email:</span> {{beautif.email}} </p>
+          <p><span class=" attributes">Responsable: </span> <span>{{beautif.admin_name}}</span> </p>
+        </div>
+        <hr/>
+        <div>
+          <p class="attributes text-center" style="font-weight: bold;">Details</p>
+          <p class="card-text ">{{beautif.details}} </p>
+        </div>
+
+        <div class="btns">
+          <button class="card-link btn">Print</button>
+          <button (click)="gotoUpdate(beautif.beautif_id || 1)" class="card-link btn btn-secondary">Update</button>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!--Plus tard mettre le nombre de prestation deja realise, le montant quelle a deja gagnee-->
+
+
+</div>

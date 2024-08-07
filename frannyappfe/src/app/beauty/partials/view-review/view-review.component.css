@@ -1,0 +1,51 @@
+
+
+h5{
+  color: #17c0eb;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.attributes{
+  font-weight: bold;
+  font-size: 14px;
+  padding: 2px;
+}
+hr{
+  border: #000 solid 2px;
+  width: 100%;
+}
+
+
+.card{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+.container{
+  font-family: 'FiraSansRegular';
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-height: 100dvh;
+  padding: 2%;
+}
+
+
+.container .card{
+  width: 40% ;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.card p{
+  text-align: justify;
+  margin-top: 2px;
+}
+
+@media (max-width:768px){
+  .container .box{
+    width: 100%;
+  }
+}

@@ -1,0 +1,66 @@
+/* #5DBAE5(bleu), #F460FC(rose), #196C08(vert), #C7B14A(gold) #AA9225(satin gold) #53534F(gray)*/
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+* {
+    margin: 0;
+    padding: 0;
+  }
+.navbar{
+    font-family: 'FiraSansRegular';
+    background-color: #53534F;
+    position: sticky;
+    top: 0;
+}
+nav a {
+    color:#F460FC;
+}
+.brand{
+    color:#F460FC;
+    font-family: 'Fasthand';
+    list-style-type: none;
+    text-align: center;
+}
+button{
+   background-color :#fff;
+   color:#F460FC;
+}
+a .active {
+    color:white;
+}
+.navbar-brand{
+    font-size: 15px;
+ }
+
+.notification a:hover{
+    color: #F460FC;
+}
+.notification a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.notification {
+    align-items: center;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #ace2fc;
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .navbar-brand{
+       font-size: 12px;
+    }
+
+    li{
+        margin-left: 6px;
+        margin-bottom: 3px;
+    }
+    
+}

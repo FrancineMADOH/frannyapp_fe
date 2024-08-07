@@ -1,0 +1,43 @@
+
+<div class="col-lg-6 reset-wrapper">
+    <div class="reset-header">
+      <img src="/assets/images/logo.png" style="height: 90px;width: 100px; border-radius: 8px;" alt="logo franny">
+
+        <h4> <span style="color:#F460FC;">Feminity</span> - <span style="color:#F460FC;">Maternity</span> - <span style="color:#F460FC">Family</span></h4>
+        <h3 class="my-3"> Reset your password </h3>
+    </div>
+
+    <div class="reset-form">
+        <form  (ngSubmit)="resetPassword($event)" #resetForm="ngForm">
+          <div class="form-group my-4 mx-2">
+            <input type="email" class="form-control" required minlength="6" id="email" name="email" aria-describedby="emailHelp"  [(ngModel)]="email" placeholder="Enter your Email">
+          </div>
+            <div class="form-group my-4 mx-2">
+              <input type="password" class="form-control" required maxlength="8" minlength="8"
+              name="password" 
+              #password ="ngModel"
+              id="password" ngModel aria-describedby="newPasswordHelp" placeholder="Enter your new password">
+            </div>
+            <!-- <div class="form-group my-4 mx-2">
+              <input type="password" class="form-control"
+               required minlength="8" name="newpasswordconfirm" id="newpasswordconfirm" 
+               #newpasswordconfirm="ngModel"
+               ngModel placeholder="Confirm your password">
+            </div> -->
+            <button type="submit" [disabled]="resetForm.invalid" class="btn my-2 ">Reset<fa-icon class="mx-2" [icon]="faArrowRight"  [styles]="{ stroke: '#fff', color: '#fff' }"></fa-icon></button>    
+          </form>
+    </div>
+
+    <div class="reset-footer">
+        <p><a routerLink="/login">Back to Login</a></p>
+    </div>
+</div>
+    
+
+
+
+
+
+
+
+

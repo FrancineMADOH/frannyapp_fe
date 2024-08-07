@@ -1,0 +1,44 @@
+<main class="container">
+
+  
+<div class="searchFormClass col-lg-4">
+  <form #filterReview="ngForm" (ngSubmit)="filterReviewBy(filterReview.value)" class="d-inline">
+      <div class="form-group">
+          <input class="form-control" id="search" minlength="1" name="search" required ngModel #search="ngModel" placeholder="Search..."
+              type="text">
+          <button [disabled]="!filterReview.valid" class="btn btn-success mx-2" type="submit">Search</button>
+      </div>
+  </form>
+</div>
+
+<section class="beautifyers_table">
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <!-- <th scope="col">Rendezvous #</th> -->
+          <th scope="col">Client</th>
+          <th scope="col">Note</th>
+          <th scope="col">Done by</th>
+          <th scope="col">Review Date</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+       <tr *ngFor="let el of filteredReviews">
+          <th scope="row"> {{el.review_id}} </th>
+          <!-- <td>{{el.rdvcode}}</td> -->
+          <td>{{el.client_name }}</td>
+          <td>{{el.note}}</td>
+          <td>{{el.bname }}</td>
+          <td>{{el.review_date}} </td>
+          <td>
+            <a (click)="gotoView(el.review_id || 1)"  class="btn btn-secondary m-1" ><i class="icon bi-eye mx-1 "></i>view</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</section>
+
+  
+</main>

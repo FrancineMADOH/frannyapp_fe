@@ -1,0 +1,21 @@
+[
+    {
+        "prestation": [
+            "Coiffure",
+            "Onglerie",
+            "Make-Up",
+            "Massage",
+            "Soins du visage"
+        ],
+        "seance": [
+            "Classic",
+            "Gold",
+            "Premium"
+        ],
+        "appointment_type": [
+            "Personel",
+            "Evenement",
+            "Entreprise"
+        ]
+    }
+]

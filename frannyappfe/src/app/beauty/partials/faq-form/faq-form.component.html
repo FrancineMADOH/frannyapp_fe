@@ -1,0 +1,36 @@
+<div class="container">
+    <form #addFaqForm="ngForm" (ngSubmit)="saveNewFaq(addFaqForm)">
+    <div class="form-group m-2">
+        <label for="title">Faq Title</label>
+        <input type="text" 
+        ngModel
+        #title="ngModel"
+        value="" name="question" id="question" class="form-control" required>
+        <small *ngIf="!title.valid && title.touched"  >Please provide a title for Faq</small>
+      </div>
+        <div class="form-group m-2">
+        <label for="category">Category</label>
+        <select class="form-select"
+            id="category"
+            name="category"
+            ngModel
+            required
+            #category="ngModel">
+          <option [selected] >Select category</option>
+          <option *ngFor="let el of categories" [value]="el" >{{el}}</option>
+        </select>
+        <small *ngIf="!category.valid && category.touched"  >Please choose a category for faq</small>
+      </div>
+        <div class="form-group m-2">
+        <label for="reponse">Answer</label>
+        <textarea  
+        ngModel
+        #reponse="ngModel"
+        name="reponse"  
+        id="reponse" class="form-control" required></textarea>
+        <small *ngIf="!reponse.valid && reponse.touched"  >Please a response for the FAQ</small>
+      </div>
+    <button type="submit" [disabled]="!addFaqForm['valid']" data-bs-dismiss="modal" class="btn btn-success">Save faq</button>
+    </form>
+</div>
+    

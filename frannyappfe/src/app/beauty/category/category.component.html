@@ -1,0 +1,18 @@
+<div class="main container">
+    <h1 class="text-center">Franny Beauty | {{category}} </h1>
+    <p class="text-center"> {{category}} a domicile</p>
+
+        <div class="card my-4" *ngFor="let el of prestations">
+            <div class="card-body">
+              <h5 class="card-title text-center"> {{el.title}} | <i class="bi bi-clock"></i> {{el.duration}} </h5>
+              <h6 class="card-subtitle classic m-2"> <i class="bi bi-circle-arrow-right"></i> Classic | {{el.price}} XAF</h6>
+              <p class="card-text text-justify">{{ el.seance }} </p>
+              <h6 class="card-subtitle gold m-2"> Gold | {{el.gold_price}} XAF</h6>
+              <p class="card-text text-justify">  {{el.gold}} </p>
+              <h6 class="card-subtitle premium m-2"> Premium | {{el.premium_price }} XAF</h6>
+              <p class="card-text text-justify">  {{el.premium}} </p>
+              <button  (click)="bookPrestation(el.pres_id || 1)" class=" card-link btn btn-success">Reservez</button>
+            </div>
+          </div>
+          <!-- <i class="bi bi-clock" -->
+</div>

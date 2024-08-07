@@ -1,0 +1,66 @@
+<main class="m-2">
+  
+
+    <!--Display the empty data set list -->
+    <app-empty *ngIf="isEmpty"></app-empty>
+
+    <div class="main_content"  *ngIf="!isEmpty">
+        
+            <div class="searchFormClass col-lg-4 my-2">
+                <form #searchForm="ngForm" (ngSubmit)="searchArticleByTerm(searchForm.value)" class="d-inline">
+                    <div class="form-group">
+                        <input class="form-control" id="search" minlength="5" name="search" required ngModel #search="ngModel" placeholder="Rechercher..."
+                            type="text">
+                        <button [disabled]="!searchForm.valid" class="btn btn-success mx-2" type="submit">Rechercher</button>
+                    </div>
+                </form>
+            </div>
+            <div style="color: #F460FC !important; font-size: 1.5rem; font-weight: bold;" *ngIf="emptyquery" class="text-center text-muted my-2">
+                <p > <i class="bi bi-emoji-frown"></i> Aucune correspondance ! Essayez un autre terme...</p>
+            </div>
+        
+
+        
+            <div  class="card my-4" *ngFor="let post of filteredPostList" >
+                <div class="card-body">
+                    <h4 class="card-title text-center">{{post.title}} </h4>
+                    <h6 class="text-center text-muted card-subtitle ">
+                        <span class="m-2 fw-bold">Publié le: </span> {{post.create_at.split(',')[0]}}
+                        <span class="m-2 fw-bold">Categorie:  </span>{{post.category}}
+                    </h6>
+                    <div class="card-text p-2 my-3">
+                        {{post.summary}}
+                    </div>
+                    <div>
+                        <ul class="social_icons">
+                            <li>
+                                <span class=""> By: {{post.admin_name}} |</span> 
+                            </li>
+                            <li>
+                                <a  href="{{post.facebook_url}}" target="_blank"><i class="bi bi-facebook"></i></a>
+            
+                            </li>
+                            <li>
+                                <a href="{{post.linkedin_url}}" target="_blank"><i class="bi bi-linkedin"></i></a>
+            
+                            </li>
+                            <li>
+                                <a href="{{post.twitter_url}}" target="_blank"><i class="bi bi-twitter"></i></a>
+            
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <button (click)="viewblogPost(post.post_id||1,post.slug)"  class="btn btn-success mx-3 read">Lire plus <i class="bi bi bi-arrow-right"></i></button>
+                        <button *ngIf="isAdmin" (click)="editblogPost(post.post_id || 1 )"  class="btn btn-secondary mx-2">Edit</button>
+                        <button *ngIf="isAdmin" (click)="deleteblogPost(post.post_id || 1)"  class="btn btn-danger" type="submit">Delete</button>
+                       
+            
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+    </main>   
+

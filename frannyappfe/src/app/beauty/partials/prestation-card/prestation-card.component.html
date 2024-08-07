@@ -1,0 +1,45 @@
+<main class="container">
+  
+<div class="searchFormClass col-lg-4 my-4">
+  <form #searchPrestation="ngForm" (ngSubmit)="searchPrestationByTerm(searchPrestation.value)" class="d-inline">
+      <div class="form-group">
+          <input id="search" minlength="5" name="search" required ngModel #search="ngModel" placeholder="Search..."
+              type="text">
+          <button [disabled]="!searchPrestation.valid" class="btn btn-success mx-2" type="submit">Search</button>
+      </div>
+  </form>
+</div>
+  <section class="prestation_table">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Prestation</th>
+            <th scope="col">Category</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Classic</th>
+            <th scope="col">Gold</th>
+            <th scope="col">Premium</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let el of filteredList">
+            <th scope="row"> {{el.pres_id}} </th>
+            <td>{{el.title}}</td>
+            <td>{{el.category }}</td>
+            <td>{{el.duration }}</td>
+            <td>{{el.price}}</td>
+            <td>{{el.gold_price }}</td>
+            <td>{{el.premium_price}} </td>
+            <td>
+              <a (click)="gotoUpdate(el.pres_id || 1)" class="card-link btn btn-success mx-3"><i class="icon bi-pen mx-1"></i>edit</a>
+              <a (click)="gotoView(el.pres_id || 1)" class="card-link btn btn-secondary"><i class="icon bi-eye mx-1"></i>view</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</section>
+
+
+</main>

@@ -1,0 +1,463 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+/* #5DBAE5(bleu), #F460FC(rose), #196C08(vert), #C7B14A(gold) #AA9225(satin gold) #53534F(gray)*/
+
+*{
+    font-family: 'FiraSansRegular';
+}
+h1,h4 {
+    color:#5DBAE5 ;
+}
+small{
+    color:red;
+    margin-bottom: 10px;
+    font-size:10px;
+}
+ng-template{
+    width: 100%;
+}
+
+
+.personalize{
+    background-color: #f8f6f6;
+    padding: 30px;
+    margin-top: 30px;
+}
+.personalize i{
+    font-size: 30px;
+    color:#53534F;
+    font-weight: bold;
+}
+.personalize button {
+    background-color:#5DBAE5 ;
+    border: 0px;
+}
+.personalize h5{
+    color: #5DBAE5;
+    font-weight: bold;
+}
+
+.why_us h3{
+    color: #5DBAE5;
+    font-weight: bold;
+}
+.why_us .card {
+    border: solid #000 0px;
+}
+.why_us h5{
+    color: #F460FC;
+    font-weight: bold;
+}
+.why_us i{
+    color:#53534F;
+    font-size: 30px;
+}
+.disponibilite{
+    background-color: white !important;
+    border-radius: 50%;
+    padding: 20px;
+}
+.message-sent{
+    padding: 50px 10px 50px 10px;
+}
+.message-sent span{
+    color: #F460FC;
+    font-family: 'Fasthand';
+    font-size: 1.6em;
+}
+
+
+
+.prestation_links{
+    padding: 2%;
+    text-align: center;
+
+}
+.prestation_links h3{
+    /* color: #AA9225; */
+    color: #5DBAE5;
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.prestation_links a{
+ background-color: #f8f6f6;
+ font-size: 15px;  
+}
+
+.Onglerie{
+    background-image: url( "../../../assets/onglerie.jpg");
+    background-position: center center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    padding: 10%;
+}
+.maquillage{
+    background-image: url(" ../../../assets/makeup.jpg" );
+    background-position: center center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    padding: 10%;
+}
+.Coiffure{
+    background-image: url("../../../assets/coiffure.webp");
+    background-position: center center;
+    /* background-size: 90%; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10%;
+}
+
+.prestation_list{
+    background-color: #f8f6f6;
+
+    /* background-color: #fff; */
+    padding: 2%;
+}
+.element-pres{
+    /* border: solid 1px #000; */
+    border-radius: 10px;
+    padding: 15px 20px 5px 20px;
+    margin: 12px;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.why_us{
+    background-color: #fff;
+}
+.prestation_list h5{
+    color: #F460FC;
+    font-weight: bold;
+}
+.prestation_list h3{
+    font-weight: bold;
+}
+
+.prestation_list a{
+    text-decoration: none !important;
+    color: #5DBAE5;
+}
+.prestation_list h3{
+    color: #5DBAE5;
+    font-weight: bold !important;
+    margin: 10px 0 20px 0;
+}
+
+.why_us h3{
+    color: #5DBAE5;
+    font-weight: bold !important;
+    margin: 10px 0 20px 0;
+}
+
+/*Reviews */
+.reviews{
+    padding:2%;
+    margin-top: 3%; 
+}
+.reviews h4 {
+    color: #5DBAE5;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+}
+.reviews .card{
+    border-radius: 10px;
+}
+.review-elements{
+    display: flex;
+}
+.card-reviews-elements{
+    display: flex;
+    justify-content: space-between;
+}
+.bi-star{
+    color:#fcd425;
+}
+
+/*faqs*/
+.faqs{
+    background-color: #f8f6f6;
+    margin-top: 7%;
+}
+.faqs .category{
+    color: #F460FC
+}
+.faqs .text-muted{
+    color:#5DBAE5 !important ;
+    font-size: 1.4rem;
+}
+.faqs h4{
+    color: #5DBAE5;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+}
+.faqs .card{
+    border-radius: 20px;
+    box-shadow: rgba(121, 120, 120, 0.35) 0px -50px 36px -28px inset;
+}
+.faqs .btn{
+    background-color: #5DBAE5;
+    color: #fff;
+    width: 20%;
+}
+
+.faqs .card-title{
+    display: flex;
+    justify-content: space-between;
+}
+.faqs .answer{
+    color: #53534F;
+}
+.faqs .question{
+    color: #5DBAE5;
+    font-size: 1.4em;
+}
+.carrousel h3{
+    color: #5DBAE5;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.carrousel h4{
+    color: #5DBAE5;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+}
+.carrousel p{
+    text-align: justify;
+    font-size: inherit;
+} 
+
+ngb-carousel {
+    max-width: 100%;
+    margin: 5px auto;
+}
+ngb-carousel img {
+    width: 100%;
+    outline: none;
+    height: fit-content;
+}
+ngb-carousel {
+    width: inherit;
+    height: inherit;
+}
+.carousel-inner {
+    overflow: visible;
+}
+.carousel-item {
+    display: flex !important;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.2s ease-in-out, visibility 1.2s;
+    z-index: -1;
+}
+.carousel-item.active{
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+.carousel-control-prev {
+     z-index: 20;
+}
+.caption{
+    font-size: 16px;
+    text-align: justify;
+    font-weight: bold;
+}
+.carousel-control-next {
+     z-index: 20;
+}
+.carousel-indicators{
+    z-index: 20;
+}
+.carrousel-button{
+    background-color: #5DBAE5;
+    border: none;
+}
+carousel-caption > p{
+    color: #fff;
+}
+.fadein-text i{
+  color: #5DBAE5;
+
+}
+.fadein-text{
+    border-radius: 22px;
+    animation: slideInUp ease 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 44px 45px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+
+/* .fadein-text:hover{
+    animation: fadeInDown ease 1s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}*/
+
+.fadein-text-pres{
+    animation: slideInUp ease 1s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+} 
+
+@keyframes slideInUp {
+    0% {
+         opacity: 0;
+         transform: translateY(-50px);
+         }
+ 
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+        background-color: #fff;
+
+     }
+    
+  }
+  @-moz-keyframes slideInUp {
+    0% { opacity: 0;
+        transform: translateY(-50px);
+        background-color: #5DBAE5;
+     }
+    100% {
+         opacity: 1; 
+         transform: translateY(0);
+        background-color: #fff;
+
+        }
+  }
+  
+  @-webkit-keyframes slideInUp {
+    0% { opacity: 0; transform: translateY(-50px);
+        background-color: #53534F; }
+  
+    100% { opacity: 1; transform: translateY(0);
+        background-color: #fff;}
+  }
+  
+  @-o-keyframes slideInUp {
+    0% { opacity: 0;  transform: translateY(-50px);
+        background-color: #53534F;}
+    100% { opacity: 1; transform: translateY(0);
+        background-color: #fff;}
+  }
+  
+  @-ms-keyframes slideInUp {
+    0% { opacity: 0; transform: translateY(-50px);
+        background-color: #53534F; }
+    100% { opacity: 1;transform: translateY(0);
+        background-color: #fff; }
+  }
+
+@keyframes fadeInDown {
+    0% {
+         opacity: 0;
+         transform: translateY(-50px);
+         background-color: #5DBAE5;
+         }
+   
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+        background-color: #fff;
+
+     }
+    
+  }
+  @-moz-keyframes fadeInDown {
+    0% { opacity: 0;
+        transform: translateY(-50px);
+        background-color: #5DBAE5;
+     }
+    100% {
+         opacity: 1; 
+         transform: translateY(0);
+        background-color: #fff;
+
+        }
+  }
+  
+  @-webkit-keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50px);
+        background-color: #53534F; }
+  
+    100% { opacity: 1; transform: translateY(0);
+        background-color: #fff;}
+  }
+  
+  @-o-keyframes fadeInDown {
+    0% { opacity: 0;  transform: translateY(-50px);
+        background-color: #53534F;}
+    100% { opacity: 1; transform: translateY(0);
+        background-color: #fff;}
+  }
+  
+  @-ms-keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50px);
+        background-color: #53534F; }
+    100% { opacity: 1;transform: translateY(0);
+        background-color: #fff; }
+  }
+
+
+@media only screen and (max-width: 768px){
+    .Coiffure{
+        margin-bottom: 30px;
+    }
+    .Onglerie{
+        margin-bottom: 30px;
+    }
+    .maquillage{
+        margin-bottom: 30px;
+    }
+    .review-elements{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .reviews h4 {
+        color: #5DBAE5;
+        font-size: 20px;
+    }
+
+    .carrousel h4{
+        color: #F460FC;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px;
+    }
+    .fadein-text{
+        margin-bottom: 5%;    
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 24px 25px, rgba(0, 0, 0, 0.12) 0px -6px 10px, rgba(0, 0, 0, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+    }
+    
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

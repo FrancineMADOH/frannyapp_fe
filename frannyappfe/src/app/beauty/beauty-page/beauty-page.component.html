@@ -1,0 +1,222 @@
+<div class="main my-2 container-fluid">
+    
+    
+<div class="carrousel" style="width: 100%;">
+    <ngb-carousel [showNavigationArrows]="true" [showNavigationIndicators]="true" [keyboard]="true"
+        [pauseOnHover]="true" [wrap]="true" [activeId]="'secondSlide'">
+        <ng-template ngbSlide *ngFor="let el of carrousel_images">
+            <div class="picsum-img-wrapper w-100">
+                <img src="{{el.src}}" style="height: 700px; width: 100%;" class="img img-fluid" alt="{{el.alt}}">
+            </div>
+            <div class="carousel-caption">
+                <h4 class="carrousel-title">{{el.title}}</h4>
+                <p class="caption text-center">{{el.caption}} </p>
+                <button type="button" class="btn btn-secondary carrousel-button" data-bs-toggle="modal"
+                    data-bs-target="#biblioModal">
+                    Réservez Maintenant
+                </button>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
+
+  <!-- Modal  -->
+  <div class="modal fade" id="biblioModal" tabindex="-1" aria-labelledby="biblioModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title text-center fw-bold" id="biblioModalLabel"> Prestation personalisée </h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div *ngIf="reservationDone" class="message-sent text-center">
+              <p class="my-2"> Message envoye  ! <span>&#128525; &#128525;</span> </p>
+                 Merci d'avoir contacter <span>Franny beauty</span>
+                   Votre demande est en cours de traitement.
+              
+             </div>
+          <div class="modal-body form-group my-2" *ngIf="!reservationDone" >
+              <form (ngSubmit)="SendNotif(sendNotifForm)" #sendNotifForm="ngForm">
+                  <label for="phone">Laissez nous votre contact pour un service comme vous voulez quand vous voulez !</label>
+                  <small *ngIf=" phone.touched && phone.invalid">Numero incorrect entrez un chiffre  0 - 9</small>
+                  <input required
+                   name="phone" 
+                   id="phone" 
+                   ngModel 
+                   #phone="ngModel"
+                  class="form-control my-3 pres_perso_form"
+                  type="text" pattern="[0-9]*" 
+                  maxlength="9" minlength="9"
+                  placeholder="(+237)...">
+                  <input required
+                      name="perso_name" 
+                      id="perso_name" 
+                      ngModel 
+                      #perso_name="ngModel"
+                      class="form-control my-3"
+                      type="text"
+                      maxlength="100" minlength="4"
+                      placeholder="Votre Nom...">
+                  <button  [disabled]="!sendNotifForm.valid" style="border: none; background-color: #5DBAE5;"  class="btn btn-primary" type="submit">Réserver</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+    
+
+   
+
+    <!-- liste des services -->
+    <div class="row text-center prestation_list">
+        <h3 class="my-3 text-center">Nos Services</h3>
+
+        <div class="col-lg-4">
+            <h5>Coiffure</h5>
+            <div *ngFor="let el of coiffure" class="element-pres fadein-text-pres">
+                <div>
+                    <a  routerLink="/beauty/{{el.category}}/book/{{ el.pres_id}}"> 
+                        {{el.title}} 
+                    </a>
+                </div>
+                <div>
+                    <a class="m-2"  routerLink="/beauty/{{el.category}}/book/{{ el.pres_id}}">
+                        {{el.price}} XAF <i class="icon bi-chevron-right"></i>
+                    </a>
+                </div>
+                
+            </div>
+          
+        </div>
+        <div class="col-lg-4">
+            <h5 >Maquillage</h5>
+            <div *ngFor="let el of makeup" class="element-pres  fadein-text-pres">
+               
+                    <a routerLink="/beauty/{{el.category}}/book/{{el.pres_id}}">
+                        {{el.title}}
+                    </a>
+                
+                <div>
+                    <a class="m-2" routerLink="/beauty/{{el.category}}/book/{{el.pres_id}}" >
+                        {{el.price}} XAF <i class="icon bi-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center">
+            <h5>Onglerie</h5>
+            <div *ngFor="let el of onglerie" class="element-pres fadein-text-pres">
+                <div>
+                    <a  routerLink="/beauty/{{el.category}}/book/{{el.pres_id}}" >{{el.title}}
+                    </a>
+                </div>
+                <div>
+                    <a class="m-2" routerLink="/beauty/{{el.category}}/book/{{el.pres_id}}" >{{el.price}} XAF
+                        <i class="icon bi-chevron-right"></i>
+                    </a>
+                </div>   
+            </div>
+       
+        </div>
+    </div>
+
+     <!-- Why choose us -->    
+    <div class="row why_us">
+        <h3 class="my-3 text-center">Pourquoi nous choisir ?</h3>
+
+        <div class="col-lg-4 p-4">
+            <div class="card p-2 fadein-text">
+                <p class="text-center"> <i class="icon bi-arrow-90deg-right tex-center"></i> </p>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Flexibilité</h5>
+                  <p class="card-text text-center"> La beauté à votre rythme. Prenez des rendez-vous qui correspondent à votre emploi du temps. Dites adieu aux bousculades  dans les salons,et aux  pertes de temps dans les embouteillages .Réservez en ligne, en temps et en tout lieu !</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 p-4">
+            <div class="card p-2 fadein-text" >
+                <p class="text-center"> <i class="icon bi-alarm text-center"></i> </p>
+
+                <div class="card-body">
+                  <h5 class="card-title text-center">Rapidité</h5>
+                  <p class="card-text text-center">Coiffure et maquillage pressés ? Relooking pour un evenement ce soir ? Évitez l'attente! obtenez rapidement le look que vous souhaitez ! Réservez votre prochaine prestation sur notre application et soyez impeccable !</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 p-4 ">
+            <div class="card  p-2 fadein-text">
+                <p class="text-center"><i class="bi bi-briefcase-fill tex-center"></i></p>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Professionalisme</h5>
+                  <p class="card-text text-center">Parceque l'expérience fait la différencem nous mettons à des professionnels de la beauté agréés ! Notre équipe qualifié  vous mettra en confiance, et prendra soin de vous comme vous le meritez. Commencez aujourdhui ! </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services via les listes -->    
+    <!-- <div class="row prestation_links">
+        <h3 class="my-3 text-center">Nos Prestations</h3>
+        <div  class="col-lg-4 Coiffure">
+            <h3>Coiffure</h3>
+            <a routerLink="/beauty/category/Coiffure">Voir plus...</a>
+        </div>
+        <div class="col-lg-4 maquillage">
+            <h3>Maquillage</h3>
+            <a routerLink="/beauty/category/Make-Up">Voir plus...</a>
+        </div>
+        <div  class="col-lg-4  Onglerie">
+            <h3>Onglerie</h3>
+            <a routerLink="/beauty/category/Onglerie">Voir plus...</a>
+        </div>
+    </div> -->
+
+  
+    
+
+    <!-- les revues -->
+    <!-- <div class="row reviews">
+        <h4 class="text-center">Nos Clients temoignent !</h4>
+         <div class="review-elements">
+            <div class="card m-2" style="width: 30rem;" *ngFor="let el of reviewsthree">
+                <div class="card-header card-reviews-elements">
+                    <p class="card-title">
+                        <span class="text-muted">{{el.review_date.split(',')[0]}}</span> 
+                    </p>
+                    <p> 
+                        <i class="icon bi-star"></i>
+                        <i class="icon bi-star"></i>
+                        <i class="icon bi-star"></i>
+                        <i class="icon bi-star"></i>
+                    </p>
+                </div>
+                <div class="card-body">
+                    <p class="card-text text-justify">{{el.comment}} </p>
+                </div>
+            </div>
+         </div>
+        
+    </div> -->
+
+    <!-- Faq principale -->
+     <div class="row faqs">
+        <h4 class="text-center">FAQ - FOIRE AUX QUESTIONS</h4>
+        <div>
+            <div class="card m-4" *ngFor="let el of faqs">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p class="question">{{el.question}}</p>
+                        <p class="category">{{el.category}} </p>
+                        
+                    </div>
+                    <p class="card-text answer">{{el.reponse}} </p>
+    
+                </div>
+            </div>
+        </div>
+        <!-- <div class="text-center">
+            <a class="btn" (click)="allFaq()">Toutes les questions</a>
+        </div> -->
+    </div> 
+
+</div>

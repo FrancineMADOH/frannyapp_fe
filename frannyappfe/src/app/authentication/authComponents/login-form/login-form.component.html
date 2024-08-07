@@ -1,0 +1,50 @@
+<div class="col-lg-6 login-wrapper">
+    <div class="login-header">
+        <img src="/assets/images/logo.png" style="height: 90px;width: 100px; border-radius: 8px;" alt="logo franny">
+        
+        <h4> <span style="color:#F460FC;">Feminity</span> - <span style="color:#F460FC;">Maternity</span> - <span style="color:#F460FC">Family</span></h4>
+        <h3 class="my-4"> Sign in to your account </h3>
+    </div>
+
+    <div class="login-form">
+        <form  #loginForm="ngForm" (ngSubmit)="singinAdmin(loginForm)">
+            <div class="form-group  m-2">
+              <input 
+              ngModel
+              #email="ngModel"
+              type="email" 
+              class="form-control"   
+              required minlength="8" 
+              name="email" id="email" 
+              [pattern]="emailRegex"
+              aria-describedby="emailHelp" placeholder="Enter your email">
+            </div>
+            <small *ngIf="email.invalid && email.touched">Email is required</small>
+            <div class="form-group  m-2">
+              <!-- <fa-icon class="mx-2" [icon]="faEnvelope"></fa-icon> -->
+              <input 
+              type="password"  
+              class="form-control" 
+              ngModel
+              #admin_password="ngModel"
+                required maxlength="8" 
+                minlength="8"
+                id="admin_password"   
+                name="admin_password"  
+                placeholder="Enter your password">
+                <small *ngIf="!admin_password.valid && admin_password.touched ">Password is required</small>
+            </div>
+            <button type="submit" class="btn my-2 " [disabled]="loginForm.invalid" >Sign in<fa-icon class="mx-2" [icon]="faArrowRight"  [styles]="{ stroke: '#fff', color: '#fff' }"></fa-icon> </button>
+          </form>
+    </div>
+    <!-- &#xf002 https://fontawesome.com/v5/cheatsheet-->
+
+   
+
+    <div class="login-footer">
+        <p>Fogot password? <a routerLink="/reset">Reset here</a></p>
+        <p>No account ? <a routerLink="/signup">Signup here</a></p>
+    </div>
+</div>
+
+

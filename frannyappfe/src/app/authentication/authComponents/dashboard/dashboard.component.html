@@ -1,0 +1,43 @@
+<main class="container">
+
+    <div class="headerrow my-3">
+        <div>
+            <h4 class="text-center">Franny Admin Panel</h4>
+            <h6> Welcome<span> {{ user.username }}</span> </h6>    
+            <button  (click)="logOut()"  class="btn btn-primary ">Logout</button>
+        </div>
+    </div>
+
+   
+    <div class="row my-4">       
+        <div class="col-lg-4 blog_section">
+            <h4 class="text-center my-2">Blog</h4>
+            <ul class="blog m-4">
+                <li><a routerLink="/posts/new" >New Post</a> </li>
+                <li><a routerLink="/posts">All Blog Posts</a> </li>
+                <li><a routerLink="/posts/statistics" >Statistics</a> </li>
+                <li><a routerLink="/admin">Administration</a> </li>
+            </ul>
+        </div>
+        <div class="col-lg-3 blog_section">
+            <h4 class="text-center my-2">Beauty</h4>
+            <ul class="beauty m-4">
+                <li><a routerLink="/beauty/beautifyers">Beautifyers</a> </li>
+                <li><a routerLink="/beauty/faqs">FAQS</a> </li>
+                <li><a routerLink="/beauty/prestations">Prestations</a></li>
+                <li><a routerLink="/beauty/rendezvous">Rendez-vous</a> </li>
+                <li><a routerLink="/beauty/reviews">Reviews</a> </li>
+                <li><a routerLink="/beauty/performance">Service Performance</a> </li>
+            </ul>
+        </div>
+        <div class="col-lg-3 blog_section">
+            <h4 class="text-center my-2">Market</h4>
+            <ul class="market m-4">
+                <li><a routerLink="/market/add">Add New article</a> </li>
+                <li><a routerLink="/beauty/articless">All articles</a> </li>
+                <li><a routerLink="/beauty/faqs">FAQS</a> </li>
+            </ul>
+        </div>
+
+    </div>
+</main>

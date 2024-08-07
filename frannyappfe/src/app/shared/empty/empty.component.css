@@ -1,0 +1,11 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+/* #5DBAE5(bleu), #F460FC(rose), #196C08(vert), #C7B14A(gold) #AA9225(satin gold) #53534F(gray)*/
+
+*{
+    font-family: 'FiraSansRegular';
+}
+
+h1{
+    color:#53534F ;
+   
+}

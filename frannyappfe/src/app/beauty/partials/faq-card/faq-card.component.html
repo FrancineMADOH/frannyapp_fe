@@ -1,0 +1,45 @@
+  <app-empty *ngIf="emptydb"></app-empty>
+  <!--Trying a table -->
+  <section class="faqs_table" *ngIf="!emptydb">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Question</th>
+          <th scope="col">Answer</th>
+          <th scope="col">Category</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let el of faqList">
+          <th scope="row"> {{el.faq_id}} </th>
+          <td>{{el.question}}</td>
+          <td>{{el.reponse }}</td>
+          <td>{{el.category}}</td>
+          <td *ngIf="isAuth">
+            <form #deleteFaqForm="ngForm"  (ngSubmit)="deleteFaq(deleteFaqForm,el.faq_id || 1 )" class="my-2">
+              <button type="submit" class="btn btn-danger"> <i class="bi bi-trash"></i></button>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+<!-- <div class="modal fade" id="updateBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="updateBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="updateBackdropLabel">Update Faq</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <app-faq-form></app-faq-form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->

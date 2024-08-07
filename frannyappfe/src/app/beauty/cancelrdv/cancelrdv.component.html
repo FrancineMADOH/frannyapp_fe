@@ -1,0 +1,23 @@
+<main>
+    <h1 class="text-center">Cancel appointment</h1>
+
+    <section class="m-4">
+        <form #cancelrdvForm="ngForm" (ngSubmit)="cancelApointment(cancelrdvForm)">
+            <div class="form-group my-2">
+                <label for="cancellation_reason">Cancellation Reason</label>
+                <textarea type="text"
+                id="cancellation_reason"
+                required
+                maxlength="300"
+                minlength="50"
+                ngModel 
+                placeholder="What happens ?  Maximum 50 characters..."
+                #cancellation_reason="ngModel"
+                name="cancellation_reason"
+                class="form-control"></textarea>
+            </div>
+            <button type="submit" [disabled]="!cancelrdvForm['valid']" class="btn btn-danger m-2">Cancel</button>
+        </form>
+            
+    </section>
+</main>

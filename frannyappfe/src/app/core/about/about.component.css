@@ -1,0 +1,147 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+* {
+  list-style-type: none;
+  font-size: 14px;
+  font-family: 'FiraSansRegular';
+}
+.main-hero-text{
+  text-align: justify;
+}
+
+.message-sent{
+    background-color: rgb(162, 238, 162);
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.social-link{
+  background-color: #797878;
+  border-bottom-left-radius:18px;
+  border-bottom-right-radius:18px;
+}
+
+.our_core_value li,.our_mission_check li {
+  color: #000 ;
+  text-align: justify;
+}
+
+.our_core_value i,.our_mission_check i {
+  color: #5DBAE5 ;
+   font-size: 1.5rem;
+   font-weight: bold;
+}
+.img{
+  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 1px;
+
+}
+
+
+
+ul{
+  margin: auto;
+  max-width: 90%;
+}
+.social-link h4{
+  color: #F460FC;
+}
+
+.social_links{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+
+li{
+  list-style-type: none;
+  color: #5DBAE5;
+  margin-right: 20px;
+
+}
+
+
+/* #5DBAE5(bleu), #F460FC(rose), #196C08(vert), #C7B14A(gold) #AA9225(satin gold) #53534F(gray)*/
+h1{
+  color:#5DBAE5 ;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+i{
+  color:#5DBAE5 ;
+  font-weight: bold;
+}
+#contact{
+  border: solid 1px #555;
+  border-radius: 8px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+a{
+  color:#53534F;
+  text-decoration: none;
+}
+h2{
+  color:#5DBAE5 ;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+button:hover{
+  color: #fff;
+  background-color:#5DBAE5 ;
+}
+a:hover{
+  color:#F460FC ;
+  text-decoration: none;
+}
+td {
+  padding: 10px;
+}
+.btn{
+  background-color: #53534F ;
+  color:#fff ;
+}
+q{
+  font-size: 1.3rem;
+
+}
+.unlink a{
+  color:#5DBAE5 !important;
+}
+
+.unlink a:hover {
+  color:#F460FC !important;
+}
+
+input,textarea {
+
+  width: 100%;
+  color: rgb(36, 35, 42);
+  font-size: 16px;
+  line-height: 20px;
+  min-height: 28px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+  background: rgb(251, 251, 251);
+  transition: all 0.1s ease 0s;
+  :focus{
+      border: 2px solid rgb(124, 138, 255);
+  }
+
+}
+
+
+@media  screen and (max-width:900px) {
+  h1{
+    font-size: 1.2em;
+  }
+
+  .col-lg-3{
+    margin-bottom: 1%;
+  }
+  
+}

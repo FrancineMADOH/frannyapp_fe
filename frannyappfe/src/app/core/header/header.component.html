@@ -1,0 +1,39 @@
+
+<header>
+    <nav class="navbar navbar-expand-lg">
+      <div>
+          <ul class="brand p-2" >
+              <li><a class="navbar-brand">
+                <p>Franny</p>
+                <p>Feminity - Maternity - Family</p>
+                <!-- <img src="/assets/images/logo.png" style="height: 40px; width: 60px;" alt="logo franny"> -->
+              </a></li>
+          </ul>
+      </div>
+      
+      
+      <button class="navbar-toggler"  type="button" (click)="navbarCollapse = !navbarCollapse" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div [ngbCollapse]="navbarCollapse"  class="collapse navbar-collapse" justify-content-end id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li  class="nav-item active">
+            <a class="nav-link" routerLinkActive="router-link-active" routerLink="dashboard/{{email}}" *ngIf="this.auth.isLogin()"  (click)="navbarCollapse = true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/posts'"  routerLinkActive="active" (click)="navbarCollapse = true" >Blog</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="'/beauty'" routerLinkActive="active"  (click)="navbarCollapse = true" >Beauty</a>
+          </li>
+          <!-- <li class="nav-item">
+              <a class="nav-link" [routerLink]="'/market'"  routerLinkActive="active" (click)="navbarCollapse = true" >Market</a>
+          </li> -->
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="'/about'"  routerLinkActive="active" (click)="navbarCollapse = true" >About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</header>
